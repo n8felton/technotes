@@ -15,6 +15,16 @@ jobs:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
+      - name: Geekdoc Build
+        - uses: actions/setup-node@v3
+          working-directory: themes/geekdoc
+          with:
+            node-version: 16
+        - run: npm install
+          working-directory: themes/geekdoc
+        - run: npm run build
+          working-directory: themes/geekdoc
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
