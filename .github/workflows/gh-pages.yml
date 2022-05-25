@@ -21,10 +21,10 @@ jobs:
           node-version: 16
         
       - name: Build Geekdoc
-        run: npm install
         working-directory: themes/geekdoc
-        run: npm run build
-        working-directory: themes/geekdoc
+        run: | 
+          npm install
+          npm run build
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
